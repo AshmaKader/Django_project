@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sales</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    
+</head>
+<style>
+  #corners {
+    border-radius: 25px;
+    border: 2px solid lightseagreen;
+    padding: 10px;
+    width: 90%;
+    height: 70%;
+    margin: auto;
+  }
+
+  table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    height: 100%;
+    font-size: 21px;
+  }
+
+  td,
+  th {
+
+    text-align: center;
+    padding-right: 0.4%;
+    padding: 1%;
+  }
+
+  th {
+    color: slateblue;
+  }
+
+  tr {
+    border-bottom: 1px solid #ccc;
+  }
+
+  tr:last-child {
+    border-bottom: none;
+  }
+
+  .tablebutton {
+    background-color: white;
+    border-color: #eb3c65;
+    color: #eb3c65;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 26px;
+    white-space: nowrap;
+
+  }
+
+  .tablebutton:hover {
+    background-color: #f1f1f1;
+  }
+</style>
+<body >
+
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">Swifter</a>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="New_Sales"><span class="glyphicon glyphicon-plus-sign"></span>New Sale</a></li>
+            <li><a href="Logout"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+           
+            
+          </ul>
+        </div>
+      </nav>
+      <div id="corners">
+        <div class="table-responsive table-hover">
+
+            <table>
+                <tr>
+                  <th rowspan="2">Order ID</th>
+                  
+                  <th rowspan="2">Business Partner Name</th>
+                  
+                  <th rowspan="2">Product Name</th>
+                  
+                 
+                 
+                  <th colspan="3">Sales Representative</th>
+                  <th rowspan="2">Action</th>
+                  
+                 
+                  
+                </tr>
+                <tr>
+                  <td>
+                    Employee Name
+                  </td>
+                  <td>
+                    Employee Role
+                  </td>
+                  <td>
+                    Employee Department
+                  </td>
+                  
+                </tr>
+                {% for sale in sale %}
+                <tr>
+                         
+                <td> {{sale.id}}</td>
+               
+                  <td > {{sale.business_partner}}</td>
+              
+                  <td>{{sale.product_name}}</td>
+                  <td>{{sale.Emp_name}}</td>
+                  
+                  <td>{{sale.Emp_role}}</td>
+                  <td>{{sale.Emp_department}}</td>
+                  
+                  <td>
+                    <a href= "{% url 'View_Sales' sale.id %}"><button type="button" name="View" value= "{{sale.id}}"class="btn btn-primary"><i class="glyphicon glyphicon-eye-open"></i></button></a>
+                    {% if sale.Emp_department == emp_dept %}
+                    <a href= "{% url 'Edit_Sales' sale.id %}"><button type="button" name="Edit" value="{{sale.id}}" class="btn btn-success"><i class="glyphicon glyphicon-edit"></i></button></a>
+                    {% endif %}
+                    <!-- <button type="button" class="btn btn-danger"><i class="glyphicon glyphicon-trash"></i></button>-->
+                  </td>
+            
+                </tr>
+                {% endfor %}
+                
+              </table>
+        </div>
+      </div>
+    
+</body>
+</html>

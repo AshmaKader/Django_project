@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>emp</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<style>
+   
+    tr:hover {
+        background-color: khaki;
+    }
+
+
+    #corners {
+        border-radius: 25px;
+        border: 2px solid lightseagreen;
+        padding: 10px;
+        width: 90%;
+        height: 70%;
+        margin: auto;
+      }
+  
+      table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+        height: 100%;
+        font-size: 18px;
+      }
+  
+      td,
+      th {
+  
+        text-align: center;
+        padding-right: 0.4%;
+        padding: 1%;
+      }
+  
+      th {
+        color: slateblue;
+      }
+  
+      tr {
+        border-bottom: 1px solid #ccc;
+      }
+  
+      tr:last-child {
+        border-bottom: none;
+      }
+  
+      .tablebutton {
+        background-color: white;
+        border-color: #eb3c65;
+        color: #eb3c65;
+        padding: 10px 25px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 26px;
+        white-space: nowrap;
+  
+      }
+  
+      .tablebutton:hover {
+        background-color: #f1f1f1;
+      }
+    
+      #s_msg{
+        color:white;
+        font-size:x-large;
+    }
+    #login_msg
+    {
+        background-color:LightGreen;
+    }
+   
+</style>
+    <body  >
+        <div id="m-body">
+
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <a class="navbar-brand" href="#">Swifter</a>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="Register"><span class="glyphicon glyphicon-user"></span>Create User</a></li>
+                <li><a href="Logout"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+               
+               
+                
+              </ul>
+            </div>
+          </nav>
+          
+
+          
+        
+        <div id="corners">
+            <div class="table-responsive table-hover">
+  
+                <table>
+                    <tr>
+                      <th>Employee ID</th>
+                      
+                      <th>Employee Name</th>
+                      
+                      <th>Job Title</th>
+                     
+                      <th>Department</th>
+                      
+                     
+                      
+                    </tr>
+                    {% for emp in users%}
+                    <tr>
+                             
+                    <td> {{ emp.user_id}} </td>
+                   
+                      <td > {{ emp.user_name}} </td>
+                  
+                      <td> {{ emp.role}} </td>
+                      <td> {{ emp.department}} </td>
+                      
+                     
+                     
+                
+                    </tr>
+                   
+                    {% endfor %}
+                  </table>
+            </div>
+          </div>
+        </div>
+</body>
+
+
+
+
+</html>

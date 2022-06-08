@@ -1,0 +1,260 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>SwiftMails</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  
+</head>
+<style>  
+  
+    @import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700');  
+    body {  
+      font-family: 'Roboto Condensed', sans-serif;  
+      color: #262626;
+      font-size: 18px;  
+      
+    }  
+    .container {  
+      width: 100%;  
+      padding-right: 15px;  
+      padding-left: 15px;  
+      margin-right: auto;  
+      margin-left: auto;  
+    }  
+    @media (min-width: 1200px)  
+    {  
+      .container {  
+        max-width: 1140px;  
+      }  
+    }  
+    .d-flex {  
+      display: flex;  
+      flex-direction: row;  
+      background: #f6f6f6;  
+      border-radius: 0 0 5px 5px;  
+      padding: 25px;  
+      height:650px;
+    }  
+    form {  
+      flex: 4;  
+    }  
+    .Yorder {  
+      flex: 2;  
+    }  
+    .title {  
+      background: -webkit-gradient(linear, left top, right bottom, color-stop(0, #5195A8), color-stop(100, #70EAFF));  
+      background: -moz-linear-gradient(top left, #5195A8 0%, #70EAFF 100%);  
+      background: -ms-linear-gradient(top left, #5195A8 0%, #70EAFF 100%);  
+      background: -o-linear-gradient(top left, #5195A8 0%, #70EAFF 100%);  
+      background: linear-gradient(to bottom right, #5195A8 0%, #70EAFF 100%);  
+      border-radius: 5px 5px 0 0 ;  
+      padding: 20px;  
+      color: #f6f6f6;  
+    }  
+    h2 {  
+      margin: 0;  
+      padding-left: 15px;   
+    }  
+    .required {  
+      color: red;  
+    }  
+    label {  
+      display: block;  
+      margin: 15px;  
+    }  
+    table {  
+      display: block;  
+      margin: 15px;  
+    }  
+    label>span {  
+      float: left;  
+      width: 25%;  
+      margin-top: 12px;  
+      padding-right: 10px;  
+    }  
+    input[type="email"]  
+    {  
+      width: 70%;  
+      height: 30px;  
+      padding: 5px 10px;  
+      margin-bottom: 10px;  
+      border: 1px solid #dadada;  
+      color: #888;  
+    }  
+    select  
+    {  
+      width: 70%;  
+      height: 30px;  
+      padding: 5px 10px;  
+      margin-bottom: 10px;  
+      border: 1px solid #dadada;  
+      color: #888;  
+    }  
+    input[type="text"] {  
+      width: 70%;  
+      height: 30px;  
+      padding: 5px 10px;  
+      margin-bottom: 10px;  
+      border: 1px solid #dadada;  
+      color: #888;  
+    }  
+    input[type="tel"]   
+    {  
+      width: 70%;  
+      height: 30px;  
+      padding: 5px 10px;  
+      margin-bottom: 10px;  
+      border: 1px solid #dadada;  
+      color: #888;  
+    }  
+    select {  
+      width: 72%;  
+      height: 45px;  
+      padding: 5px 10px;  
+      margin-bottom: 10px;  
+    }  
+
+    table {  
+      margin: 0;  
+      padding: 0;  
+    }  
+    th {  
+      border-bottom: 1px solid #dadada;  
+      padding: 10px 0;  
+    }  
+    tr>td:nth-child(1) {  
+      text-align: left;  
+      color: #2d2d2a;  
+    }  
+    tr>td:nth-child(2) {  
+      text-align: right;  
+      color: #52ad9c;  
+    }  
+    td {  
+      border-bottom: 1px solid #dadada;  
+      padding: 25px 25px 25px 0;  
+    }  
+    p {  
+      display: block;  
+      color: #888;  
+      margin: 0;  
+      padding-left: 25px;  
+    }  
+    .Yorder>div {  
+      padding: 15px 0;   
+    }  
+    button {  
+      width: 35%;  
+      margin: 10px;  
+      padding: 10px;  
+      border: none;  
+      border-radius: 30px;  
+      background: #52ad9c;  
+      color: #fff;  
+      font-size: 20px;  
+      font-weight: bold;  
+     
+    }  
+    button:hover {  
+      cursor: pointer;  
+      background: #428a7d;  
+    } 
+    #btn1{
+      background: MediumSeaGreen;
+      margin-left: 15%;
+    } 
+    #btn2{
+      background:tomato;  
+    }
+    #btn1 #btn2{
+      display: inline-block;
+    }
+    </style> 
+<!--style="background-color:#accffe;"1-->
+<body >
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Swifter</a>
+    </div>
+
+  
+    <ul class="nav navbar-nav navbar-right">
+        <li><a href= "{% url 'sales_mgmt' %}"><span class="glyphicon glyphicon-tasks"></span> Sales</a></li> 
+	  <li><a href= "{% url 'Logout' %}"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+     
+      
+    </ul>
+  </div>
+</nav>
+<div class="container">  
+    <div class="title">  
+        <h2> Generate Sales Order </h2>  
+    </div>  
+  <div class="d-flex">  
+    {% for x in sale %}
+    <form action="{% url 'Edit_Sales' x.id %}" method="POST">  
+      {% csrf_token %}
+     
+      <label>  
+        <span   class="fname">Sale Representative Name:</span>  
+        <input type="text" name="emp_name" value={{x.Emp_name}} readonly>  
+      </label>
+      <label>  
+        <span   class="fname"> Sale Representative Position: </span>  
+        <input type="text" name="emp_role" value={{x.Emp_role}} readonly>  
+      </label>
+      <label>  
+        <span class="fname">  Sale Representative Department: </span>  
+        <input type="text" name="emp_dept" value={{x.Emp_department}} readonly>  
+      </label>
+      <label>  
+        <span   class="fname"> Sold to Business Partner </span>  
+        <input type="text" name="business_partner" value={{x.business_partner}} >  
+      </label>  
+      <label>  
+        <span class="lname"> Product Name  </span>  
+        <input type="text" name="product_name" value={{x.product_name}} >  
+      </label>  
+      <label>  
+        <span> Order Quantity </span>  
+        <input type="number" name="order_quantity" value={{x.order_quantity}} >  
+      </label>  
+      <label>  
+          <span> Price</span>  
+          <input type="number" name="price" value={{x.price}} >  
+        </label>
+        
+      <label> 
+      
+        <span>Country </span>  
+        <input type="text" name="country" value={{x.Country}} >
+        
+      </label>  
+      
+      <label>  
+        <span> Phone Number </span>  
+        <input type="tel" pattern="[0-9]{10}" name="Phone_number" value={{x.Phone_number}} >   
+      </label>  
+      <label>  
+        <span> Email Address </span>  
+        <input type="email" name="Email_Id" value={{x.Email_Id}} >   
+      </label> 
+      
+      <button id="btn1" type="submit"  >Save Changes</button>
+      <a href= "{% url 'Sales_deletedata' x.id %}"><button type="button" id="btn2" ><i class="glyphicon glyphicon-trash"></i>   Delete</button></a>
+    </form>  
+    {% endfor %}
+    </div>  
+   </div>  
+  </div>  
+  </body>  
+  </html>  
+  

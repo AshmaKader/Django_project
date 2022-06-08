@@ -1,0 +1,181 @@
+
+
+{% load static %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Registration Form</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!-- LINEARICONS -->
+		<link rel="stylesheet" href="{% static 'fonts/linearicons/style.css' %}">
+		
+		<!-- STYLE CSS -->
+		<link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <style>
+            
+.navbar {
+    width: 100%;
+    background-color: #555;
+    overflow: auto;
+  }
+  
+  .icon{
+  float: right;
+   margin-top: -1%;
+    color: white;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  .logo{
+      margin-right: 95%;
+    
+      color: white;
+      text-decoration: none;
+      font-size: 17px;
+  }
+  
+  .navbar a:hover {
+    background-color: #000;
+  }
+  
+  .active {
+    background-color: #04AA6D;
+  }
+  
+  @media screen and (max-width: 500px) {
+    .navbar a {
+      float: none;
+      display: block;
+    }
+  }
+        </style>
+        <script>
+        function myFunction() {
+            var x = document.getElementById("psw");
+            var y = document.getElementById("psw-repeat");
+            if (x.type === "password") {
+                x.type = "text";
+                y.type = "text";
+            } else {
+                x.type = "password";
+                y.type = "password";
+            }
+        }
+    </script>
+	<style>
+        
+	#space{
+            margin-left:50px;
+            color:white;
+        }
+        #s_msg{
+            color:limegreen;
+            font-size:x-large;
+        }
+		#e_msg{
+			color:Crimson;
+		}
+		.image-1 {
+  			position: absolute;
+ 			 bottom: 96px;
+			margin-bottom:300px;
+  			left: 300px;
+  			z-index: 299; }
+        .form-control{
+            color: black;
+        }
+	</style>
+	</head>
+
+	<body>
+        <div class="navbar">
+            <a  class="logo" >Swifter</a> 
+            <a class="icon" href="{% url 'emp_mgmt'%}" ><span class="lnr lnr-user"></span>Users</a> 
+           
+           
+          </div>
+       
+		<div class="wrapper">
+			<div class="inner">
+              
+				
+				<form action="Register" method="post">
+				    {% csrf_token %}
+					<h3>Register New Employee</h3>
+					<label id="space">.......... </label>
+            <label id="s_msg">{{s_msg}}</label>
+            <div id="msg">
+
+                <b>
+                    <label id="space">.......... </label>
+                    {% for msg in messages %}
+                    <label id="e_msg">{{msg}}</label>
+                    <label id="space">........................ </label>
+                    {% endfor %}
+                </b>
+
+            </div>
+					<div class="form-holder">
+						<span class="lnr lnr-user"></span>
+						<input type="text" class="form-control" placeholder="Employee Name"name="username" id="username" required>
+					</div>
+					
+				
+					
+					<div class="form-holder">
+                     
+                      
+                            <span class="lnr lnr-briefcase"></span>
+                            <select id="role" name="role" class="form-control" required>
+                                <option value="" disabled selected>Select Employee Role</option>
+                                <option value="Director">Sales Director</option>
+                                <option value="Manager">Sales Manager</option>
+                                <option value="Team">Sales Team</option>
+                                
+                              </select>
+                            
+                        </div>
+                        
+                        <div class="form-holder">
+                            <span class="lnr lnr-apartment"></span>
+                            <select id="dept" name="dept" class="form-control" >
+                                <option value="" disabled selected>Select Employee Department</option>
+                                <option value="North-India">Sales Office-North India</option>
+                                <option value="South-India">Sales Office-South India</option>
+                                <option value="India">Sales Office-India</option>
+                                
+                              </select>
+                            
+                            
+                        </div>
+                        <div class="form-holder">
+						<span class="lnr lnr-lock"></span>
+						<input type="password" class="form-control" placeholder="Password"  name="psw" id="psw" required>
+                        
+					</div>
+					<div class="form-holder">
+						<span class="lnr lnr-lock"></span>
+                        
+						<input type="password" class="form-control" placeholder="Confirm Password" name="psw-repeat" id="psw-repeat" required>
+					</div>
+                    <div class="form-holder">
+                        <input type="checkbox" onclick="myFunction()">Show Password
+                    </div>
+                    
+					<button type="submit">
+						Register
+					</button>
+				
+				</form>
+			
+			</div>
+			
+		</div>
+		
+		<script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+		<script src="{% static 'js/main.js' %}"></script>
+	</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>

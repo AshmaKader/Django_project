@@ -1,0 +1,145 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>SwiftMails</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  
+
+<style>
+
+
+        body
+        {
+            font-family: Arial;
+            font-size: 10pt;
+        }
+      
+
+        #s_msg{
+            color:white;
+            font-size:x-large;
+        }
+        #login_msg
+        {
+            background-color:LightGreen;
+        }
+    .container {
+	margin: auto;
+  width: 60%;
+  padding: 15px;
+  background-color:white;
+  border-radius:50px;
+}
+
+
+
+
+    .card {
+      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+      transition: 0.3s;
+      width: 70%;
+      height: 100%;
+      margin: 3%;
+      display: inline-flex;
+    }
+    
+    .card:hover {
+      box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    }
+    
+   
+    #card_1{
+      margin-left: -20%;
+      height:500px;
+     
+
+    }
+    #card_2
+    {
+     margin-right: -4000px;
+     height:500px;
+    
+    }
+  
+    </style>
+
+<script type="text/javascript">
+  
+setTimeout(Fade_out, 5000);
+function Fade_out() {
+  $("#login_msg").fadeOut().empty();
+}
+</script>
+
+
+
+
+</head>
+<!--style="background-color:#accffe;"1-->
+<body >
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Swifter</a>
+    </div>
+
+   <!-- <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Home</a></li>
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Page 1-1</a></li>
+          <li><a href="#">Page 1-2</a></li>
+          <li><a href="#">Page 1-3</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Page 2</a></li>
+    </ul>-->
+    <ul class="nav navbar-nav navbar-right">
+	  <li><a href="Logout"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+     
+      
+    </ul>
+  </div>
+</nav>
+
+<div class="container">
+<div id="login_msg" style="display:block;border-radius:50px;">
+<label id="s_msg" style="padding:10px; height:1px;"><strong>WELCOME {{username}} !</strong> {{s_msg}}</label>
+</div>
+ 
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+
+<div class="card" id="card_1">
+  <img src="{% static 'empp.jpg' %}"alt="Avatar" style="width:200%">
+  <div class="container">
+    <h3><b><a href="{% url 'emp_mgmt'%}" style="color: black;">   Employee Management</a></b></h3> 
+    
+  </div>
+    
+  
+</div>
+<div class="card" id="card_2">
+    <img src="{% static 'sales.jpg' %}"alt="Avatar" style="width:200%">
+    <div class="container">
+      <h3><b><a href="{% url 'sales_mgmt'%}" style="color: black;">Sales Management</a></b></h3> 
+      
+    </div>
+      
+    
+  </div>
+  
+
+</body>
+</html>
+
